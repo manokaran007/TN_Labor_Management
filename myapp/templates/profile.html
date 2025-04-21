@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="{% static 'profile-style.css' %}" />
+</head>
+<body>
+  <div class="profile-container">
+    <h2>User Profile</h2>
+
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label>Name</label>
+        <p>{{ name }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>Photo</label>
+        {% if photo %}
+          <img src="{{ photo.url }}" alt="User Photo" width="120" />
+        {% else %}
+          <p>No photo uploaded</p>
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <label>Date of Birth</label>
+        <p>{{ dob }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>Gender</label>
+        <p>{{ gender }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>Address</label>
+        <p>{{ address }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>State</label>
+        <p>{{ state }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>Contact Number</label>
+        <p>{{ contact }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>Department</label>
+        <p>{{ department }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>Bank Account No</label>
+        <p>{{ bank }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>Current Working Location</label>
+        <p>{{ current_location }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>Working State</label>
+        <p>{{ working_state }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>Location</label>
+        <p>{{ location }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>Working Experience (in years)</label>
+        <p>{{ experience }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>District</label>
+        <p>{{ district }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>Occupation</label>
+        <p>{{ occupation }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>Salary (₹)</label>
+        <p>{{ salary }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>Covid Vaccination</label>
+        <p>{{ vaccine }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>Current Employer Details</label>
+        <p>{{ employer }}</p>
+      </div>
+
+      <div class="form-group">
+        <label>Marital Status</label>
+        <p>{{ marital_status }}</p>
+      </div>
+
+    </div>
+
+    <div class="form-footer">
+      <a href="{% url 'updateprofile' %}" class="btn">Edit Profile</a>
+      
+      <p>Go back to <a href="{% url 'home' %}">Home</a></p>
+    </div>
+
+  </div>
+</body>
+</html>

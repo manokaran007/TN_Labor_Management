@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Page</title>
+  <link rel="stylesheet" href="{% static 'home-style.css' %}" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Migrant workers support system</div>
+      <ul class="nav-links">
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+        <li><a href="{% url 'complaint_status' %}">Status</a></li>
+        <li><a href="{% url 'complaint' %}">Complaint</a></li>
+        <li><a href="{% url 'help' %}">Help</a></li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <section>
+      <h1>Welcome, {{ user }}</h1>
+
+      <p><strong>Migration Workers: Challenges and Contributions</strong></p>
+      
+      <p>Migration workers, often referred to as migrant laborers, are individuals who leave their home countries in search of better job opportunities, improved living standards, and an escape from economic hardship. The phenomenon of migration for work has been a defining feature of the global economy for centuries, contributing significantly to the development of various countries, while also posing unique challenges to both the migrants themselves and the societies they move to.</p>
+
+      <h2>Economic Factors Driving Migration</h2>
+      <p>The primary reason for migration is the pursuit of better economic prospects. Many workers migrate from developing nations to more industrialized countries in search of higher wages, better job opportunities, and improved living conditions. These migrants often take on low-wage, labor-intensive jobs that are essential for the economy of their host countries. Whether it is construction, agriculture, domestic work, or manufacturing, migrant workers provide the workforce that supports key industries, especially in sectors that local populations may be reluctant to engage in due to the nature of the work or the pay.</p>
+
+      <h2>Challenges Faced by Migration Workers</h2>
+      <p>Despite the economic opportunities that migration offers, migrant workers face numerous challenges, both in their home and host countries. One of the biggest hurdles is the emotional and social strain of being away from their families and homes. Migrants often leave behind loved ones in search of employment, which can lead to feelings of isolation and homesickness.</p>
+
+      <p>In addition to emotional challenges, migrant workers also often experience poor working conditions. Many are subjected to long hours, low wages, and unsafe working environments. Some face discrimination or exploitation due to their legal status, ethnicity, or language barriers. In some instances, migrant workers are vulnerable to human trafficking or forced labor, particularly when they migrate illegally or under exploitative contracts.</p>
+
+      <p>Furthermore, migrants frequently struggle with legal and bureaucratic hurdles. Issues such as visa restrictions, work permits, and the lack of social security or healthcare in the host country can leave migrant workers without legal protection or access to essential services. This lack of rights can make it difficult for migrants to assert themselves when facing unfair treatment at work or in society.</p>
+
+      <h2>Contributions to the Host Countries</h2>
+      <p>Despite these challenges, migrant workers play an indispensable role in the economies of their host countries. They often perform jobs that are essential to the smooth functioning of society, such as in healthcare, agriculture, construction, and service industries. In many cases, these workers are the backbone of industries that allow local economies to thrive.</p>
+
+      <p>In addition to their economic contributions, migration workers bring diversity and cultural exchange. They introduce new ideas, traditions, and practices to their host countries, enriching the cultural landscape and fostering a globalized world. Migrant workers contribute to the social and cultural fabric of their adopted countries by creating communities, establishing businesses, and participating in the arts and public life.</p>
+
+      <h2>Remittances and the Impact on Home Countries</h2>
+      <p>An important economic benefit of migration is the remittances that migrant workers send back to their home countries. Remittances are financial transfers made by migrants to their families, helping to lift entire communities out of poverty. These remittances contribute significantly to the economy of the migrants’ home countries, providing families with the means to invest in education, healthcare, and infrastructure. In some cases, remittances form a substantial portion of a country's GDP, highlighting the vital role migrant labor plays in global economic systems.</p>
+
+      <h2>Conclusion</h2>
+      <p>Migrant workers are integral to the functioning of economies worldwide, contributing not only through the labor they provide but also through the cultural exchange they facilitate and the remittances they send home. However, despite their significant contributions, migrant workers continue to face many challenges, including exploitation, discrimination, and lack of legal protections. As the global economy continues to evolve, it is essential that policymakers and international organizations work to improve the conditions for migrant workers, ensuring that they receive the rights and protections they deserve. Only through comprehensive policies that address these challenges can the true potential of migration be realized, benefiting both the workers and the societies they contribute to.</p>
+
+      <p>This is your centralized portal to manage your profile, raise complaints, get help, and learn more about us.</p>
+    </section>
+  </main>
+</body>
+</html>

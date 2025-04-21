@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="{% static 'profile-style.css' %}" />
+</head>
+<body>
+  <div class="profile-container">
+    <h2>Register</h2>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email id</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+
+        <div class="form-group">
+          <label for="photo">Photo</label>
+          <input type="file" id="photo" name="photo" accept="image/*" />
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" required />
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address" name="address" rows="2" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="state">State</label>
+          <input type="text" id="state" name="state" required />
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Contact Number</label>
+          <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" required />
+        </div>
+
+        <div class="form-group">
+          <label for="department">Department</label>
+          <select id="department" name="department" required>
+            <option value="">Select Department</option>
+            <option>Construction Workers</option>
+            <option>Textiles and Garments</option>
+            <option>Domestic Work and Housekeeping</option>
+            <option>Retail and Sales</option>
+            <option>Vendors</option>
+            <option>Security</option>
+            <option>Mining</option>
+            <option>Factories</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="bank">Bank Account No</label>
+          <input type="text" id="bank" name="bank" required />
+        </div>
+
+        <div class="form-group">
+          <label for="current-location">Current Working Location</label>
+          <input type="text" id="current-location" name="current-location" required />
+        </div>
+
+        <div class="form-group">
+          <label for="working-state">Working State</label>
+          <input type="text" id="working-state" name="working-state" required />
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" required />
+        </div>
+
+        <div class="form-group">
+          <label for="experience">Working Experience (in years)</label>
+          <input type="number" id="experience" name="experience" min="0" required />
+        </div>
+
+        <div class="form-group">
+          <label for="district">District</label>
+          <input type="text" id="district" name="district" required />
+        </div>
+
+        <div class="form-group">
+          <label for="occupation">Occupation</label>
+          <input type="text" id="occupation" name="occupation" required />
+        </div>
+
+        <div class="form-group">
+          <label for="salary">Salary (₹)</label>
+          <input type="number" id="salary" name="salary" min="0" required />
+        </div>
+
+        <div class="form-group">
+          <label for="vaccine">Covid Vaccination</label>
+          <select id="vaccine" name="vaccine" required>
+            <option value="">Select</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="employer">Current Employer Details</label>
+          <textarea id="employer" name="employer" rows="2" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="marital-status">Marital Status</label>
+          <select id="marital-status" name="marital-status" required>
+            <option value="">Select</option>
+            <option>Single</option>
+            <option>Married</option>
+            <option>Divorced</option>
+            <option>Widowed</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="form-footer">
+        <button type="submit" class="btn">Register</button>
+        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

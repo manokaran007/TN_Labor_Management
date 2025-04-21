@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}MyPortal{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'home-style.css' %}" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">MyPortal</div>
+      <ul class="nav-links">
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+        <li><a href="{% url 'complaint_status' %}">Status</a></li>
+        <li><a href="{% url 'complaint' %}">Complaint</a></li>
+        <li><a href="{% url 'help' %}">Help</a></li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

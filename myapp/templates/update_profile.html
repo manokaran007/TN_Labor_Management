@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Update Profile</title>
+  <link rel="stylesheet" href="{% static 'profile-style.css' %}" />
+</head>
+<body>
+  <div class="profile-container">
+    <h2>Update Profile</h2>
+    <h2>Name: {{ name }}</h2>
+    <h2>UserName: {{ contact }}</h2>
+    <h2>Mail id: {{ email }}</h2>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" value="{{ name }}" required />
+        </div>
+
+        <div class="form-group">
+          <label for="photo">Photo</label>
+          <input type="file" id="photo" name="photo" accept="image/*" />
+          {% if photo %}
+            <p>Current photo: <img src="{{ photo.url }}" width="100" /></p>
+          {% endif %}
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" value="{{ dob }}" required />
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="Male" {% if gender == "Male" %}selected{% endif %}>Male</option>
+            <option value="Female" {% if gender == "Female" %}selected{% endif %}>Female</option>
+            <option value="Other" {% if gender == "Other" %}selected{% endif %}>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address" name="address" rows="2" required>{{ address }}</textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="state">State</label>
+          <input type="text" id="state" name="state" value="{{ state }}" required />
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Contact Number</label>
+          <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" value="{{ contact }}" required />
+        </div>
+
+        <div class="form-group">
+          <label for="department">Department</label>
+          <select id="department" name="department" required>
+            <option value="">Select Department</option>
+            <option {% if department == "Construction Workers" %}selected{% endif %}>Construction Workers</option>
+            <option {% if department == "Textiles and Garments" %}selected{% endif %}>Textiles and Garments</option>
+            <option {% if department == "Domestic Work and Housekeeping" %}selected{% endif %}>Domestic Work and Housekeeping</option>
+            <option {% if department == "Retail and Sales" %}selected{% endif %}>Retail and Sales</option>
+            <option {% if department == "Vendors" %}selected{% endif %}>Vendors</option>
+            <option {% if department == "Security" %}selected{% endif %}>Security</option>
+            <option {% if department == "Mining" %}selected{% endif %}>Mining</option>
+            <option {% if department == "Factories" %}selected{% endif %}>Factories</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="bank">Bank Account No</label>
+          <input type="text" id="bank" name="bank" value="{{ bank }}" required />
+        </div>
+
+        <div class="form-group">
+          <label for="current-location">Current Working Location</label>
+          <input type="text" id="current-location" name="current-location" value="{{ current_location }}" required />
+        </div>
+
+        <div class="form-group">
+          <label for="working-state">Working State</label>
+          <input type="text" id="working-state" name="working-state" value="{{ working_state }}" required />
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" value="{{ location }}" required />
+        </div>
+
+        <div class="form-group">
+          <label for="experience">Working Experience (in years)</label>
+          <input type="number" id="experience" name="experience" value="{{ experience }}" min="0" required />
+        </div>
+
+        <div class="form-group">
+          <label for="district">District</label>
+          <input type="text" id="district" name="district" value="{{ district }}" required />
+        </div>
+
+        <div class="form-group">
+          <label for="occupation">Occupation</label>
+          <input type="text" id="occupation" name="occupation" value="{{ occupation }}" required />
+        </div>
+
+        <div class="form-group">
+          <label for="salary">Salary (₹)</label>
+          <input type="number" id="salary" name="salary" value="{{ salary }}" min="0" required />
+        </div>
+
+        <div class="form-group">
+          <label for="vaccine">Covid Vaccination</label>
+          <select id="vaccine" name="vaccine" required>
+            <option value="">Select</option>
+            <option value="Yes" {% if vaccine == "Yes" %}selected{% endif %}>Yes</option>
+            <option value="No" {% if vaccine == "No" %}selected{% endif %}>No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="employer">Current Employer Details</label>
+          <textarea id="employer" name="employer" rows="2" required>{{ employer }}</textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="marital-status">Marital Status</label>
+          <select id="marital-status" name="marital-status" required>
+            <option value="">Select</option>
+            <option value="Single" {% if marital_status == "Single" %}selected{% endif %}>Single</option>
+            <option value="Married" {% if marital_status == "Married" %}selected{% endif %}>Married</option>
+            <option value="Divorced" {% if marital_status == "Divorced" %}selected{% endif %}>Divorced</option>
+            <option value="Widowed" {% if marital_status == "Widowed" %}selected{% endif %}>Widowed</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="form-footer">
+        <button type="submit" class="btn">Update</button>
+        <p>Go back to <a href="{% url 'home' %}">Home</a></p>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

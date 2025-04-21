@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Help Page</title>
+  <link rel="stylesheet" href="{% static 'help.css' %}" />
+</head>
+<body>
+  <div class="help-container">
+    <a href="{% url 'home' %}">Go to Homepage</a>
+    <h2>Need Help?</h2>
+    <p>If you're facing issues or have questions, check the information below. We're here to support you.</p>
+
+    <div class="help-section">
+      <h3>🔐 Account Support</h3>
+      <p>If you're unable to log in or reset your password, please contact our support team or click on the "Forgot Password" link on the login page.</p>
+    </div>
+
+    <div class="help-section">
+      <h3>📋 Submitting Complaints</h3>
+      <p>Use the Complaint page to submit any labor-related issues. Make sure to explain your problem clearly so we can help effectively.</p>
+    </div>
+
+    <div class="help-section">
+      <h3>📄 Updating Your Profile</h3>
+      <p>Go to the Profile page to update your personal details like name, contact info, or occupation.</p>
+    </div>
+
+    <div class="help-section">
+      <h3>📞 Contact Us</h3>
+      <p>If your issue is not listed here, you can reach out to us at <strong>tamilnadulabour2025@gmail.com</strong>.</p>
+    </div>
+  </div>
+</body>
+</html>

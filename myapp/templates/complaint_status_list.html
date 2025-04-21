@@ -1,0 +1,103 @@
+<!-- templates/complaint_status_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Complaint Status</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 1rem;
+            background-color: #f4f6f8;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-top: 2rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 0.5rem;
+        }
+
+        .complaint-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .complaint-item {
+            background-color: #fff;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .complaint-item strong {
+            display: inline-block;
+            min-width: 80px;
+            color: #555;
+        }
+
+        .complaint-line {
+            margin-bottom: 0.3rem;
+        }
+
+        p {
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .complaint-item {
+                padding: 0.8rem;
+            }
+
+            .complaint-item strong {
+                min-width: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <p>Go back to <a href="{% url 'admin_home' %}">Admin Home Page</a></p>
+    <h1>Unsolved Complaints</h1>
+    {% if processing_complaints %}
+        <ul class="complaint-list">
+            {% for complaint in processing_complaints %}
+                <li class="complaint-item">
+                    <div class="complaint-line"><strong>ID:</strong> {{ complaint.id }}</div>
+                    <div class="complaint-line"><strong>Name:</strong> {{ complaint.name }}</div>
+                    <div class="complaint-line"><strong>Subject:</strong> {{ complaint.subject }}</div>
+                    <div class="complaint-line"><strong>Status:</strong> {{ complaint.status }}</div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No unsolved complaints.</p>
+    {% endif %}
+
+    <h1>Solved Complaints</h1>
+    {% if solved_complaints %}
+        <ul class="complaint-list">
+            {% for complaint in solved_complaints %}
+                <li class="complaint-item">
+                    <div class="complaint-line"><strong>ID:</strong> {{ complaint.id }}</div>
+                    <div class="complaint-line"><strong>Name:</strong> {{ complaint.name }}</div>
+                    <div class="complaint-line"><strong>Subject:</strong> {{ complaint.subject }}</div>
+                    <div class="complaint-line"><strong>Status:</strong> {{ complaint.status }}</div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No solved complaints.</p>
+    {% endif %}
+    
+</body>
+</html>
